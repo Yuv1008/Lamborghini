@@ -19,12 +19,8 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:var(--ff-sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold)}
 h1,h2,h3,h4{font-family:var(--ff-d);text-transform:uppercase;letter-spacing:.1em;font-weight:400}
-
-/* cursor */
 #cur{width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;box-shadow:0 0 8px var(--gold)}
 #cur-ring{width:40px;height:40px;border:1px solid var(--gold-mid);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
-
-/* navbar */
 nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;transition:all .4s}
 nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(24px);padding:15px 60px;border-bottom:1px solid var(--border)}
 .nl{font-family:var(--ff-d);font-size:1.8rem;letter-spacing:.2em;color:var(--gold);text-decoration:none;text-shadow:0 0 20px rgba(255,184,0,.35)}
@@ -35,18 +31,9 @@ nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(24px);padding:15px 60px;b
 .nav-links a:hover::after{width:100%}
 .nav-btn{padding:12px 30px;background:transparent;color:var(--gold);border:1px solid var(--gold);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:all .3s}
 .nav-btn:hover{background:var(--gold);color:var(--black)}
-
-/* gift zone */
 #gift-zone{height:400vh;position:relative}
 #gift-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:#000}
-
-/* intro text (fades out as box opens) */
-#intro-text{
-  position:absolute;inset:0;z-index:12;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  pointer-events:none;text-align:center;
-  transition:opacity .15s;
-}
+#intro-text{position:absolute;inset:0;z-index:12;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center;transition:opacity .15s;}
 #intro-tag{font-family:var(--ff-m);font-size:.72rem;color:var(--gold);letter-spacing:.42em;text-transform:uppercase;margin-bottom:18px;text-shadow:0 0 12px rgba(255,184,0,.6)}
 #intro-h{font-family:var(--ff-d);font-size:clamp(3.5rem,8vw,7rem);line-height:.9;letter-spacing:.06em;color:var(--white)}
 #intro-h span{color:var(--gold)}
@@ -54,123 +41,60 @@ nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(24px);padding:15px 60px;b
 .scroll-cue span{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.35em;color:var(--gold-mid);text-transform:uppercase}
 .scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sline 1.7s ease-in-out infinite}
 @keyframes sline{0%,100%{transform:scaleY(0);transform-origin:top;opacity:0}45%,55%{transform:scaleY(1);transform-origin:top;opacity:1}}
-
-/* reveal text (fades in when car rises) */
-#reveal-text{
-  position:absolute;bottom:12%;left:0;right:0;
-  text-align:center;z-index:12;pointer-events:none;
-}
+#reveal-text{position:absolute;bottom:12%;left:0;right:0;text-align:center;z-index:12;pointer-events:none;}
 #reveal-h{font-family:var(--ff-d);font-size:clamp(4rem,10vw,8.5rem);letter-spacing:.08em;opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;color:var(--white)}
 #reveal-sub{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.38em;color:var(--gold);text-transform:uppercase;opacity:0;margin-top:10px;transition:opacity .6s .15s}
 #reveal-h.show,#reveal-sub.show{opacity:1;transform:translateY(0)}
-
-/* sections */
 section{padding:120px 60px}
-
-/* stats bar */
 .stats-row{display:flex;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-alt)}
 .stat{flex:1;padding:60px 40px;text-align:center;border-right:1px solid var(--border)}
 .stat:last-child{border-right:none}
 .sv{font-family:var(--ff-d);font-size:3.5rem;margin-bottom:10px;color:var(--gold)}
 .sl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.2em}
-
-/* typography */
 .stag{font-family:var(--ff-m);font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.3em;margin-bottom:20px;display:block}
 .stitle{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;margin-bottom:30px;color:var(--white)}
 .sgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:30px}
-
-/* ── 3. scroll progress bar ── */
 #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,var(--gold),#fff5cc,var(--gold));z-index:99999;transition:width .08s linear;box-shadow:0 0 8px rgba(255,184,0,.7)}
-
-/* ── 4. floating apply CTA ── */
-#float-cta{
-  position:fixed;bottom:36px;right:36px;z-index:998;
-  opacity:0;transform:translateY(16px);
-  transition:opacity .4s,transform .4s;
-  pointer-events:none;
-}
+#float-cta{position:fixed;bottom:36px;right:36px;z-index:998;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none;}
 #float-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
-#float-cta a{
-  display:flex;align-items:center;gap:10px;
-  padding:14px 28px;
-  background:var(--gold);color:var(--black);
-  font-family:var(--ff-m);font-size:.68rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.18em;
-  text-decoration:none;
-  box-shadow:0 4px 24px rgba(255,184,0,.45);
-  transition:all .3s;
-}
+#float-cta a{display:flex;align-items:center;gap:10px;padding:14px 28px;background:var(--gold);color:var(--black);font-family:var(--ff-m);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;text-decoration:none;box-shadow:0 4px 24px rgba(255,184,0,.45);transition:all .3s;}
 #float-cta a:hover{background:var(--black);color:var(--gold);box-shadow:0 4px 32px rgba(255,184,0,.6);outline:1px solid var(--gold)}
 #float-cta a svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
-
-/* ── 5. form focus glow ── */
-input:focus,textarea:focus{
-  border-bottom-color:var(--gold) !important;
-  box-shadow:0 2px 16px rgba(255,184,0,.18);
-  outline:none !important;
-}
+input:focus,textarea:focus{border-bottom-color:var(--gold) !important;box-shadow:0 2px 16px rgba(255,184,0,.18);outline:none !important;}
 input::placeholder,textarea::placeholder{color:rgba(255,255,255,.22)}
 label{transition:color .3s}
-input:focus+label,textarea:focus+label{color:var(--gold)}
-
-/* ── 6. card hover overlays ── */
 .card{grid-column:span 4;overflow:hidden;background:var(--bg-alt);transition:transform .5s,box-shadow .5s;border:1px solid transparent;position:relative}
 .card:hover{transform:translateY(-10px);border-color:var(--border);box-shadow:0 0 30px rgba(255,184,0,.08)}
 .cimg{aspect-ratio:4/5;overflow:hidden;position:relative}
 .cimg img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
 .card:hover .cimg img{transform:scale(1.08)}
-.card-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 55%,transparent 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  padding-bottom:28px;gap:10px;
-  opacity:0;transition:opacity .4s ease;
-}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 55%,transparent 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:28px;gap:10px;opacity:0;transition:opacity .4s ease;}
 .card:hover .card-overlay{opacity:1}
-.card-overlay-btn{
-  padding:10px 28px;
-  background:transparent;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  font-family:var(--ff-m);font-size:.65rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.2em;
-  cursor:pointer;text-decoration:none;
-  transition:all .3s;
-}
+.card-overlay-btn{padding:10px 28px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--ff-m);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;text-decoration:none;transition:all .3s;}
 .card-overlay-btn:hover{background:var(--gold);color:var(--black)}
 .card-overlay-spec{font-family:var(--ff-m);font-size:.6rem;color:rgba(255,255,255,.6);letter-spacing:.15em;text-transform:uppercase}
 .cbody{padding:28px 0}
 .ctitle{font-size:1.5rem;margin-bottom:8px;color:var(--white)}
 .cmeta{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-
-/* buttons */
 .btn-w{padding:18px 50px;background:var(--white);color:var(--black);text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;display:inline-block;border:1px solid var(--white);transition:all .3s}
 .btn-w:hover{background:transparent;color:var(--gold);border-color:var(--gold)}
 .btn-g{padding:18px 50px;background:var(--gold);color:var(--black);text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;display:inline-block;border:1px solid var(--gold);transition:all .3s;box-shadow:0 0 20px rgba(255,184,0,.3)}
 .btn-g:hover{background:transparent;color:var(--gold);box-shadow:0 0 30px rgba(255,184,0,.5)}
 .btn-o{padding:18px 45px;background:transparent;color:var(--white);border:1px solid var(--border);text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;display:inline-block;transition:all .3s}
 .btn-o:hover{border-color:var(--gold);color:var(--gold)}
-
-/* footer */
 footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(--border)}
-
-/* reveal */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.2,.8,.2,1)}
 .reveal.vis{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
-<!-- scroll progress bar -->
 <div id="progress-bar"></div>
-
-<!-- floating apply CTA -->
 <div id="float-cta">
   <a href="#contact">
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" style="display:none"/><path d="M8 5v14l11-7z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
     Apply For Franchise
   </a>
 </div>
-
 <div id="cur"></div><div id="cur-ring"></div>
 
 <nav id="nav">
@@ -184,20 +108,12 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply Now</button>
 </nav>
 
-<!-- ═══════════════════════════════════════
-     GIFT BOX ZONE  —  400vh
-     sticky releases at 300vh of scroll
-═══════════════════════════════════════ -->
 <div id="gift-zone">
   <div id="gift-sticky">
-    <!-- background video -->
     <video id="hero-video" src="mp_-2.mp4" autoplay muted loop playsinline
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none"></video>
-    <!-- dark gradient over video so 3D scene reads clearly -->
-    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;
-      background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.72) 100%)"></div>
+    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.72) 100%)"></div>
     <canvas id="gift-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:2"></canvas>
-
     <div id="intro-text">
       <span id="intro-tag">A Gift For The Road</span>
       <h1 id="intro-h">UNWRAP<br>THE LEGEND</h1>
@@ -206,7 +122,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
         <div class="scroll-line"></div>
       </div>
     </div>
-
     <div id="reveal-text">
       <div id="reveal-h">LAMBORGHINI</div>
       <div id="reveal-sub">FRANCHISE OPPORTUNITY · 2025</div>
@@ -214,7 +129,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   </div>
 </div>
 
-<!-- stats bar -->
 <div class="stats-row">
   <div class="stat reveal"><div class="sv">60+</div><div class="sl">Years of Excellence</div></div>
   <div class="stat reveal"><div class="sv">53</div><div class="sl">Global Markets</div></div>
@@ -222,7 +136,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   <div class="stat reveal"><div class="sv">30%</div><div class="sl">Revenue Growth</div></div>
 </div>
 
-<!-- about -->
 <section id="about">
   <div class="sgrid">
     <div style="grid-column:span 6">
@@ -240,7 +153,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   </div>
 </section>
 
-<!-- models -->
 <section id="models" style="background:var(--bg-alt)">
   <div style="margin-bottom:80px">
     <span class="stag reveal">The Collection</span>
@@ -249,7 +161,7 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   <div class="sgrid">
     <div class="card reveal">
       <div class="cimg">
-        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=2070&auto=format&fit=crop" alt="Revuelto">
+        <img src="revo" alt="Revuelto">
         <div class="card-overlay">
           <span class="card-overlay-spec">V12 Hybrid · 1015 HP · 2.5s</span>
           <a href="#contact" class="card-overlay-btn">Enquire Now</a>
@@ -269,7 +181,7 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
     </div>
     <div class="card reveal">
       <div class="cimg">
-        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2010&auto=format&fit=crop" alt="Urus">
+        <img src="urus.jpg" alt="Urus">
         <div class="card-overlay">
           <span class="card-overlay-spec">V8 Biturbo · 666 HP · 3.3s</span>
           <a href="#contact" class="card-overlay-btn">Enquire Now</a>
@@ -280,7 +192,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   </div>
 </section>
 
-<!-- strategy -->
 <section id="strategy">
   <div class="sgrid">
     <div style="grid-column:span 4">
@@ -299,7 +210,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   </div>
 </section>
 
-<!-- investment -->
 <section id="investment" style="background:var(--bg-alt);text-align:center">
   <div style="max-width:800px;margin:0 auto">
     <span class="stag reveal">Investment</span>
@@ -310,7 +220,6 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
   </div>
 </section>
 
-<!-- contact -->
 <section id="contact" style="max-width:1000px;margin:0 auto;padding:150px 60px">
   <div style="text-align:center;margin-bottom:80px">
     <span class="stag reveal">Application</span>
@@ -371,41 +280,33 @@ footer{padding:100px 60px 40px;background:var(--black);border-top:1px solid var(
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-/* ── utils ── */
 function eio(t){return t<.5?2*t*t:-1+(4-2*t)*t}
 function eo3(t){return 1-Math.pow(1-t,3)}
 function phase(sy,s,e){return eio(Math.max(0,Math.min(1,(sy-s)/(e-s))))}
 
-/* ── hero video: force play (bypasses autoplay policy) ── */
 (function(){
-  const v = document.getElementById('hero-video');
-  v.muted = true;
-  const tryPlay = () => v.play().catch(() => {});
+  const v=document.getElementById('hero-video');
+  v.muted=true;
+  const tryPlay=()=>v.play().catch(()=>{});
   tryPlay();
-  document.addEventListener('click', tryPlay, { once: true });
-  document.addEventListener('touchstart', tryPlay, { once: true });
-  document.addEventListener('scroll', tryPlay, { once: true });
+  document.addEventListener('click',tryPlay,{once:true});
+  document.addEventListener('touchstart',tryPlay,{once:true});
+  document.addEventListener('scroll',tryPlay,{once:true});
 })();
 
-/* ── navbar ── */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>50));
 
-/* ── 3. scroll progress bar ── */
-const progressBar = document.getElementById('progress-bar');
+const progressBar=document.getElementById('progress-bar');
 function updateProgress(){
-  const max = document.documentElement.scrollHeight - innerHeight;
-  progressBar.style.width = (scrollY / max * 100) + '%';
+  const max=document.documentElement.scrollHeight-innerHeight;
+  progressBar.style.width=(scrollY/max*100)+'%';
 }
-window.addEventListener('scroll', updateProgress, {passive:true});
+window.addEventListener('scroll',updateProgress,{passive:true});
 
-/* ── 4. floating apply CTA ── */
-const floatCta = document.getElementById('float-cta');
-function updateFloat(){
-  floatCta.classList.toggle('show', scrollY > innerHeight * 4);
-}
-window.addEventListener('scroll', updateFloat, {passive:true});
+const floatCta=document.getElementById('float-cta');
+function updateFloat(){floatCta.classList.toggle('show',scrollY>innerHeight*4);}
+window.addEventListener('scroll',updateFloat,{passive:true});
 
-/* ── cursor ── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let rx=0,ry=0,mx=innerWidth/2,my=innerHeight/2;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
@@ -415,23 +316,17 @@ document.querySelectorAll('a,button,.card').forEach(el=>{
   el.addEventListener('mouseleave',()=>{cur.style.width='8px';cur.style.height='8px';ring.style.width='40px';ring.style.height='40px'});
 });
 
-/* ── scroll reveal ── */
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.15})
-  .observe.bind(null) && (() => {
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  })();
+(()=>{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
 
-/* ── form ── */
 function submitForm(e){
   e.preventDefault();const f=e.target;
   f.style.opacity='0';f.style.transition='opacity .5s';
   setTimeout(()=>{f.style.display='none';document.getElementById('success').style.display='block'},500);
 }
 
-/* ════════════════════════════════════════════════
-   THREE.JS  —  Gift Box → Lamborghini
-════════════════════════════════════════════════ */
 (function(){
   const canvas=document.getElementById('gift-canvas');
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
@@ -449,30 +344,20 @@ function submitForm(e){
   camera.position.set(0,4,14);
   camera.lookAt(0,.5,0);
 
-  /* ── LIGHTS ── */
   scene.add(new THREE.AmbientLight(0xffffff,.06));
-
   const key=new THREE.DirectionalLight(0xfff8e8,1.2);
   key.position.set(5,14,10);key.castShadow=true;scene.add(key);
-
   const rimL=new THREE.DirectionalLight(0xffe000,.4);
   rimL.position.set(-5,8,-12);scene.add(rimL);
-
-  /* pulsing exterior glow around box */
   const glowL=new THREE.PointLight(0xff4400,3,14);
   glowL.position.set(0,2,0);scene.add(glowL);
-
-  /* interior light (grows as lid opens) */
   const intL=new THREE.PointLight(0xFFD700,0,18);
   intL.position.set(0,0,0);scene.add(intL);
-
-  /* orbit fill lights */
   const fillA=new THREE.PointLight(0xffe000,5,28);
   fillA.position.set(-10,6,6);scene.add(fillA);
   const fillB=new THREE.PointLight(0xff6030,3,22);
   fillB.position.set(10,4,6);scene.add(fillB);
 
-  /* ── FLOOR ── */
   const floor=new THREE.Mesh(
     new THREE.PlaneGeometry(80,60),
     new THREE.MeshStandardMaterial({color:0x050508,metalness:.93,roughness:.1})
@@ -484,7 +369,6 @@ function submitForm(e){
   grid.material.opacity=.1;grid.material.transparent=true;
   grid.position.y=-2.59;scene.add(grid);
 
-  /* particles */
   const pN=1200,pA=new Float32Array(pN*3);
   for(let i=0;i<pN;i++){pA[i*3]=(Math.random()-.5)*70;pA[i*3+1]=(Math.random()-.5)*26;pA[i*3+2]=(Math.random()-.5)*50}
   const pGeo=new THREE.BufferGeometry();
@@ -492,11 +376,7 @@ function submitForm(e){
   const pts=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0xffe000,size:.05,transparent:true,opacity:.3,sizeAttenuation:true}));
   scene.add(pts);
 
-  /* ══════════════════════
-     BUILD GIFT BOX
-  ══════════════════════ */
   const BW=6,BH=3.8,BD=6,BT=0.18;
-
   const boxMat=new THREE.MeshStandardMaterial({color:0xCC001C,metalness:.1,roughness:.68,side:THREE.DoubleSide});
   const lidMat=new THREE.MeshStandardMaterial({color:0xBB0018,metalness:.1,roughness:.62,side:THREE.DoubleSide});
   const ribMat=new THREE.MeshStandardMaterial({color:0xFFB800,metalness:.8,roughness:.15,emissive:0x331100,emissiveIntensity:.45,side:THREE.DoubleSide});
@@ -505,15 +385,9 @@ function submitForm(e){
   const boxGrp=new THREE.Group();
   scene.add(boxGrp);
 
-  /* bottom panel */
   const btm=new THREE.Mesh(new THREE.BoxGeometry(BW,BT,BD),boxMat);
   btm.position.y=-BH/2;btm.receiveShadow=true;btm.castShadow=true;boxGrp.add(btm);
 
-  /* ── wall panels ──
-     Each wall is a THREE.Group acting as the hinge.
-     The hinge group sits at the BOTTOM EDGE of the wall.
-     The wall mesh inside is offset upward by BH/2 so its base aligns with hinge.
-  */
   function wallPanel(fw,fh,fd){
     const g=new THREE.Group();
     const face=new THREE.Mesh(new THREE.BoxGeometry(fw,fh,fd),boxMat);
@@ -521,63 +395,47 @@ function submitForm(e){
     return g;
   }
   function addRibbonX(g,rw,rh,rd,fy){
-    /* horizontal ribbon (along X) + vertical ribbon (along Y) */
     const h=new THREE.Mesh(new THREE.BoxGeometry(rw,BT*1.5,rd),ribMat);
     h.position.y=fy;g.add(h);
     const v=new THREE.Mesh(new THREE.BoxGeometry(BT*1.8,rh,rd),ribMat);
     v.position.y=fy;g.add(v);
   }
   function addRibbonZ(g,rw,rh,rd,fy){
-    /* horizontal ribbon (along Z) + vertical ribbon (along Y) */
     const h=new THREE.Mesh(new THREE.BoxGeometry(rw,BT*1.5,rd),ribMat);
     h.position.y=fy;g.add(h);
     const v=new THREE.Mesh(new THREE.BoxGeometry(rw,rh,BT*1.8),ribMat);
     v.position.y=fy;g.add(v);
   }
 
-  /* FRONT wall — hinge at y=-BH/2, z=+BD/2. Folds forward (rot.x → +π/2) */
   const frontH=wallPanel(BW,BH,BT);
   addRibbonX(frontH,BW+.04,BH+.04,BT+.04,BH/2);
   frontH.position.set(0,-BH/2,BD/2);boxGrp.add(frontH);
 
-  /* BACK wall — hinge at y=-BH/2, z=-BD/2. Folds back (rot.x → -π/2) */
   const backH=wallPanel(BW,BH,BT);
   addRibbonX(backH,BW+.04,BH+.04,BT+.04,BH/2);
   backH.position.set(0,-BH/2,-BD/2);boxGrp.add(backH);
 
-  /* LEFT wall — hinge at y=-BH/2, x=-BW/2. Folds left (rot.z → +π/2) */
   const leftH=wallPanel(BT,BH,BD-2*BT);
   addRibbonZ(leftH,BT+.04,BH+.04,BD+.04,BH/2);
   leftH.position.set(-BW/2,-BH/2,0);boxGrp.add(leftH);
 
-  /* RIGHT wall — hinge at y=-BH/2, x=+BW/2. Folds right (rot.z → -π/2) */
   const rightH=wallPanel(BT,BH,BD-2*BT);
   addRibbonZ(rightH,BT+.04,BH+.04,BD+.04,BH/2);
   rightH.position.set(BW/2,-BH/2,0);boxGrp.add(rightH);
 
-  /* LID — hinge at y=+BH/2, z=-BD/2. Lid mesh center offset +Z by BD/2.
-     Opens backward: rot.x → -π*0.85 */
   const lidH=new THREE.Group();
   lidH.position.set(0,BH/2,-BD/2);
-
   const lidFace=new THREE.Mesh(new THREE.BoxGeometry(BW+.22,BT*2,BD+.22),lidMat);
   lidFace.position.set(0,0,BD/2);lidFace.castShadow=true;lidH.add(lidFace);
-
-  /* lid ribbons */
   const lidRX=new THREE.Mesh(new THREE.BoxGeometry(BW+.24,BT*1.6,BT*2),ribMat);
   lidRX.position.set(0,BT,BD/2);lidH.add(lidRX);
   const lidRZ=new THREE.Mesh(new THREE.BoxGeometry(BT*2,BT*1.6,BD+.24),ribMat);
   lidRZ.position.set(0,BT,BD/2);lidH.add(lidRZ);
 
-  /* BOW — sits at lid center */
   const bowGrp=new THREE.Group();
   bowGrp.position.set(0,BT*2.2,BD/2);
   lidH.add(bowGrp);
-
-  /* center knot */
   bowGrp.add(Object.assign(new THREE.Mesh(new THREE.SphereGeometry(.22,10,10),bowMat),{castShadow:true}));
-
-  /* 4 torus loop arcs */
   for(let i=0;i<4;i++){
     const a=(i/4)*Math.PI*2;
     const loop=new THREE.Mesh(new THREE.TorusGeometry(.48,.1,7,20,Math.PI),bowMat);
@@ -585,21 +443,14 @@ function submitForm(e){
     loop.rotation.y=-a;loop.rotation.x=Math.PI/9;
     loop.castShadow=true;bowGrp.add(loop);
   }
-
-  /* 2 ribbon tails */
   [-1,1].forEach(d=>{
     const tail=new THREE.Mesh(new THREE.BoxGeometry(.16,.07,.65),bowMat);
     tail.position.set(d*.14,-.07,.32);tail.rotation.z=d*.28;bowGrp.add(tail);
   });
 
   boxGrp.add(lidH);
-
-  /* attach interior light to box center */
   boxGrp.add(intL);
 
-  /* ══════════════════════
-     BUILD CAR (yellow Lamborghini)
-  ══════════════════════ */
   function buildCar(){
     const car=new THREE.Group();
     const bM=new THREE.MeshStandardMaterial({color:0xFFB800,metalness:.93,roughness:.07});
@@ -615,32 +466,25 @@ function submitForm(e){
       m.position.set(x,y,z);if(rz)m.rotation.z=rz;m.castShadow=true;car.add(m);return m;
     }
 
-    /* body */
     box(5.8,.52,2.3,bM,0,.15,0);
     box(.9,.1,2.45,dM,3.0,-.08,0);
     box(.6,.12,2.45,dM,-3.1,-.05,0);
 
-    /* cabin */
     const cG=new THREE.BoxGeometry(2.3,.72,2.0);
     car.add(Object.assign(new THREE.Mesh(cG,bM),{position:new THREE.Vector3(-.2,.62,0),castShadow:true}));
     car.add(Object.assign(new THREE.Mesh(cG,wM),{position:new THREE.Vector3(-.2,.62,0)}));
 
-    /* glass */
     const ws=new THREE.Mesh(new THREE.BoxGeometry(1.,.52,1.9),gM);
     ws.position.set(.86,.63,0);ws.rotation.z=-.24;car.add(ws);
     const rg=new THREE.Mesh(new THREE.BoxGeometry(.85,.48,1.85),gM);
     rg.position.set(-1.36,.61,0);rg.rotation.z=.2;car.add(rg);
 
-    /* engine lid + wing */
     box(1.1,.08,2.1,bM,-2.15,.5,0);
     box(.1,.22,2.1,bM,-2.76,.68,0);
     box(1.05,.055,2.2,bM,-2.26,.82,0);
-
-    /* sills */
     box(5.2,.17,.13,dM,0,-.07,1.22);
     box(5.2,.17,.13,dM,0,-.07,-1.22);
 
-    /* wheels */
     const wG=new THREE.CylinderGeometry(.48,.48,.3,36);
     const rG=new THREE.CylinderGeometry(.31,.31,.32,22);
     const sG=new THREE.BoxGeometry(.6,.065,.045);
@@ -650,99 +494,68 @@ function submitForm(e){
       for(let s=0;s<5;s++){const sp=new THREE.Mesh(sG,rM);sp.position.set(x,y,z);sp.rotation.x=Math.PI/2;sp.rotation.z=s/5*Math.PI*2;car.add(sp)}
     });
 
-    /* headlights */
     [.68,-.68].forEach(z=>{
       const hl=new THREE.Mesh(new THREE.BoxGeometry(.16,.1,.46),hlM);hl.position.set(2.98,.1,z);car.add(hl);
     });
-
-    /* taillights */
     [-.55,0,.55].forEach(z=>{
       const tl=new THREE.Mesh(new THREE.BoxGeometry(.12,.075,.26),tlM);tl.position.set(-2.95,.12,z);car.add(tl);
     });
 
-    /* underbody glow */
     const ub=new THREE.PointLight(0xFFB800,1.8,5);ub.position.set(0,-.65,0);car.add(ub);
     return car;
   }
 
   const car=buildCar();
-  car.scale.setScalar(.78);        /* scale to fit inside box */
-  car.position.set(0,-3.8,0);      /* starts hidden below box floor */
+  car.scale.setScalar(.78);
+  car.position.set(0,-3.8,0);
   car.visible=false;
   scene.add(car);
 
-  /* ── SCROLL-DRIVEN ANIMATION ── */
-  /* gift zone: 400vh container, 100vh sticky → 300vh effective scroll
-     we complete animation at 250vh (maxScroll), giving 50vh dwell    */
-  let tLid=0,tWalls=0,tCar=0,prevReveal=false;
+  let tLid=0,tWalls=0,tCar=0;
 
   function applyScroll(){
     const sy=scrollY;
-    const ms=2.5*innerHeight; /* 250vh */
+    const ms=2.5*innerHeight;
+    tLid  =phase(sy,0,        ms*0.38);
+    tWalls=phase(sy,ms*0.28,  ms*0.82);
+    tCar  =phase(sy,ms*0.42,  ms*1.0);
 
-    tLid  =phase(sy,0,          ms*0.38);
-    tWalls=phase(sy,ms*0.28,    ms*0.82);
-    tCar  =phase(sy,ms*0.42,    ms*1.0);
-
-    /* lid rotates backward around its back-top edge hinge */
     lidH.rotation.x=-tLid*Math.PI*.88;
-
-    /* walls fold flat (each hinge rotates 90° around respective axis) */
     const wa=tWalls*Math.PI/2;
     frontH.rotation.x= wa;
     backH.rotation.x =-wa;
     leftH.rotation.z = wa;
     rightH.rotation.z=-wa;
-
-    /* interior light grows with lid opening */
     intL.intensity=tLid*8;
 
-    /* car rises from inside */
     if(tCar>0.02){
       car.visible=true;
-      car.position.y=-3.8+eo3(tCar)*5.8; /* -3.8 → 2.0 */
+      car.position.y=-3.8+eo3(tCar)*5.8;
     } else {
       car.visible=false;
     }
 
-    /* intro text fades as lid opens */
-    const iop=Math.max(0,1-tLid*4);
-    document.getElementById('intro-text').style.opacity=iop;
-
-    /* reveal text appears when car is mostly risen */
+    document.getElementById('intro-text').style.opacity=Math.max(0,1-tLid*4);
     const revealOn=tCar>0.72;
     document.getElementById('reveal-h').classList.toggle('show',revealOn);
     document.getElementById('reveal-sub').classList.toggle('show',revealOn);
-    prevReveal=revealOn;
   }
 
   window.addEventListener('scroll',applyScroll,{passive:true});
   applyScroll();
 
-  /* ── ANIMATION LOOP ── */
   let time=0,mouseR=0;
   document.addEventListener('mousemove',e=>{mouseR=((e.clientX/innerWidth)-.5)*.4});
 
   (function loop(){
     requestAnimationFrame(loop);
     time+=.007;
-
-    /* box subtle float */
     boxGrp.position.y=Math.sin(time*1.1)*.06;
-
-    /* bow spins gently while box is closed */
     if(tLid<.05) bowGrp.rotation.y=time*.7;
-
-    /* exterior glow pulse (inviting, slows as box opens) */
     glowL.intensity=(2+Math.sin(time*2.2)*1.4)*(1-tLid*.9);
-
-    /* car slow rotation after reveal */
     if(car.visible) car.rotation.y=time*.28;
-
-    /* orbit fill lights sweep */
     fillA.position.x=Math.sin(time*.4)*14;fillA.position.z=Math.cos(time*.4)*10;
     fillB.position.x=Math.sin(time*.4+Math.PI)*12;fillB.position.z=Math.cos(time*.4+Math.PI)*8;
-
     pts.rotation.y+=.00016;
     renderer.render(scene,camera);
   })();
